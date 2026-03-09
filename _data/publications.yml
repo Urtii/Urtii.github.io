@@ -103,6 +103,7 @@
   year: 2024
   badge: "Journal"
   links:
+    paper: "https://aperta.ulakbim.gov.tr/records/276255"
     bibtex: |
       @article{aydin2024closedloop,
         author  = {Aydın, Emin Yusuf and Yılmaz, Onurcan and Topçakar, Selçuk
