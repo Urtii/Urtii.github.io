@@ -1,11 +1,12 @@
 # ============================================================
 #  Site Settings
 # ============================================================
-title: "Your Name"
-tagline: "PhD Candidate · Department of X · University of Y"
+title: "Onurcan Yılmaz"
+tagline: "Research Assistant · Electrical & Electronics Engineering · Hacettepe University"
 description: >-
-  Academic portfolio of [Your Name], a researcher working on
-  [research area]. Based at [University].
+  Academic portfolio of Onurcan Yılmaz, a research assistant at Hacettepe
+  University working on legged robotics, LiDAR-based SLAM, sensor fusion,
+  and neuromechanics. Ankara, Turkey.
 url: "https://urtii.github.io"
 baseurl: ""
 
@@ -13,8 +14,8 @@ baseurl: ""
 #  Author / Social Links
 # ============================================================
 author:
-  name: "Your Name"
-  email: "you@university.edu"
+  name: "Onurcan Yılmaz"
+  email: "onurcan@hacettepe.edu.tr"
   avatar: "/assets/img/profile.jpg"   # replace with your photo
   github: "Urtii"                                              # GitHub username
   linkedin: "yilmaz-onurcan"                                   # LinkedIn handle
