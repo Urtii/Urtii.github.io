@@ -3,14 +3,16 @@ layout: home
 title: Home
 ---
 
-I am a [PhD Candidate / Researcher / Engineer] in the
-[Department of X]({{ site.author.department_url }}) at the
-[University of Y](#).
-My research focuses on **[research area 1]**, **[research area 2]**, and
-**[research area 3]**.
+I am a Research Assistant in the
+[Department of Electrical and Electronics Engineering]({{ site.author.department_url }})
+at [Hacettepe University](https://www.hacettepe.edu.tr/english/),
+advised by [Assoc. Prof. İsmail Uyanık](https://yunus.hacettepe.edu.tr/~iuyanik/).
 
-Previously, I was a [role] at [institution/company].
-I am advised by [Prof. Advisor Name](https://example.com).
+My research spans two interconnected areas:
+**legged robotics** — where I work on LiDAR-based odometry, 3D SLAM, and
+sensor fusion for quadruped platforms — and **neuromechanics** — where I study
+the sensorimotor dynamics of weakly electric fish to understand active sensing
+and biological control strategies.
 
-I am currently [open to / not looking for] research collaborations and
-industry positions. Feel free to reach out via email.
+I completed my M.S. at Hacettepe University in February 2025, with a thesis on
+3D LiDAR-based sensor fusion and mapping on a quadruped robot system.
