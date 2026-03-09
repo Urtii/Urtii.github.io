@@ -1,0 +1,25 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if you ever use npm tooling)
+node_modules/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

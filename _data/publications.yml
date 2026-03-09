@@ -1,0 +1,57 @@
+# ============================================================
+# publications.yml
+#
+# Each entry supports:
+#   title     (string)  — full paper title
+#   authors   (string)  — comma-separated; wrap your name in <strong> or
+#                         mark it with "me: true" using the authors list form
+#   venue     (string)  — conference / journal name + year
+#   year      (int)     — used for grouping
+#   badge     (string)  — optional short label, e.g. "NeurIPS 2024"
+#   links:
+#     paper   (url)     — link to PDF / preprint
+#     code    (url)     — link to GitHub repo
+#     bibtex  (string)  — raw BibTeX entry (use YAML block scalar |)
+#
+# Add a new publication by copying a block below and filling in the fields.
+# ============================================================
+
+- title: "Your Paper Title Here: A Study of Something Interesting"
+  authors: "**Your Name**, Co-Author One, Co-Author Two"
+  venue: "Proceedings of the Conference on Important Things (COIT), 2024"
+  year: 2024
+  badge: "COIT 2024"
+  links:
+    paper: "https://arxiv.org/abs/0000.00000"
+    code: "https://github.com/Urtii/your-repo"
+    bibtex: |
+      @inproceedings{yourname2024paper,
+        title     = {Your Paper Title Here: A Study of Something Interesting},
+        author    = {Your Name and Co-Author One and Co-Author Two},
+        booktitle = {Proceedings of the Conference on Important Things},
+        year      = {2024},
+        url       = {https://arxiv.org/abs/0000.00000}
+      }
+
+- title: "Another Publication: Methods and Results"
+  authors: "Co-Author One, **Your Name**, Co-Author Three"
+  venue: "Journal of Significant Results, Vol. 42, 2023"
+  year: 2023
+  badge: "Journal"
+  links:
+    paper: "https://arxiv.org/abs/0000.00001"
+    bibtex: |
+      @article{yourname2023another,
+        title   = {Another Publication: Methods and Results},
+        author  = {Co-Author One and Your Name and Co-Author Three},
+        journal = {Journal of Significant Results},
+        volume  = {42},
+        year    = {2023}
+      }
+
+- title: "Workshop Paper: Preliminary Findings on a New Topic"
+  authors: "**Your Name**, Advisor Name"
+  venue: "Workshop on Emerging Topics (WET) @ ICLR, 2023"
+  year: 2023
+  links:
+    paper: "https://arxiv.org/abs/0000.00002"

@@ -1,0 +1,30 @@
+# ============================================================
+# talks.yml
+#
+# Each entry supports:
+#   date      (string)  — displayed as-is, e.g. "Nov 2024"
+#   title     (string)  — talk title
+#   venue     (string)  — event / institution name
+#   slides    (url)     — optional; button hidden when omitted
+#   video     (url)     — optional; button hidden when omitted
+#
+# Liquid conditional logic in talks.html ensures that Slides /
+# Video buttons are only rendered when a URL is present.
+# ============================================================
+
+- date: "Nov 2024"
+  title: "Your Talk Title: An Invited Presentation"
+  venue: "International Conference on Something, City, Country"
+  slides: "https://speakerdeck.com/yourname/talk-slides"
+  video: "https://youtube.com/watch?v=example"
+
+- date: "Aug 2024"
+  title: "Research Seminar: Overview of My Current Work"
+  venue: "Department of X, University of Y"
+  slides: "https://speakerdeck.com/yourname/seminar-slides"
+  # No video URL — Video button will not appear
+
+- date: "Mar 2023"
+  title: "Workshop Presentation: Preliminary Results"
+  venue: "Workshop on Emerging Topics @ ICLR 2023"
+  # No slides or video — neither button will appear
