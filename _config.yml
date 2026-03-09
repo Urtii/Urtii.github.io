@@ -16,11 +16,11 @@ author:
   name: "Your Name"
   email: "you@university.edu"
   avatar: "/assets/img/profile.jpg"   # replace with your photo
-  github: "Urtii"                     # GitHub username
-  linkedin: ""                        # LinkedIn handle
-  google_scholar: ""                  # Google Scholar profile ID
-  orcid: ""                           # ORCID iD, e.g. 0000-0000-0000-0000
-  department_url: ""                  # Link to your department page
+  github: "Urtii"                                              # GitHub username
+  linkedin: "yilmaz-onurcan"                                   # LinkedIn handle
+  google_scholar: "BcVj4hwAAAAJ"                               # Google Scholar profile ID
+  orcid: "0009-0003-6264-4290"                                 # ORCID iD
+  department_url: "https://www.ee.hacettepe.edu.tr/?link=400999&sublink=285&lang=e"  # Department page
 
 # ============================================================
 #  Navigation
