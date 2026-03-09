@@ -33,6 +33,8 @@ nav_links:
     url: "/publications/"
   - title: "Talks"
     url: "/talks/"
+  - title: "Teaching"
+    url: "/teaching/"
 
 cv_url: "/assets/pdf/cv.pdf"          # path to your CV PDF
 
