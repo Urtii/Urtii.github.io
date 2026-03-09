@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<!-- ============================================================
+     Hero / Bio Section
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero-inner container">
+
+    <!-- Profile photo -->
+    <div class="hero-photo-wrap">
+      <img
+        class="hero-photo"
+        src="{{ site.author.avatar | relative_url }}"
+        alt="Portrait of {{ site.author.name }}"
+        width="180"
+        height="180"
+        loading="eager"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+      <!-- Fallback initials avatar shown if image is missing -->
+      <div class="hero-photo hero-photo--placeholder" aria-hidden="true" style="display:none;">
+        {{ site.author.name | split: " " | map: "first" | join: "" | upcase | truncate: 2, "" }}
+      </div>
+    </div>
+
+    <!-- Bio text -->
+    <div class="hero-bio">
+      <h1 class="hero-name" id="hero-name">{{ site.author.name }}</h1>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+
+      {{ content }}
+
+      {% include social_icons.html %}
+    </div>
+
+  </div>
+</section>

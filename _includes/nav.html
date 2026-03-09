@@ -1,0 +1,49 @@
+<header class="site-header">
+  <nav class="nav-container" aria-label="Primary navigation">
+
+    <!-- Site name / brand -->
+    <a class="nav-brand" href="{{ '/' | relative_url }}">
+      {{ site.author.name }}
+    </a>
+
+    <!-- Hamburger for mobile -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Nav links -->
+    <ul class="nav-menu" id="nav-menu" role="list">
+      {%- for link in site.nav_links -%}
+      <li>
+        <a class="nav-link{% if page.url == link.url %} nav-link--active{% endif %}"
+           href="{{ link.url | relative_url }}">
+          {{ link.title }}
+        </a>
+      </li>
+      {%- endfor -%}
+
+      <!-- CV button -->
+      {%- if site.cv_url and site.cv_url != "" -%}
+      <li>
+        <a class="btn btn--primary btn--sm nav-cv"
+           href="{{ site.cv_url | relative_url }}"
+           target="_blank"
+           rel="noopener noreferrer">
+          View CV
+        </a>
+      </li>
+      {%- endif -%}
+
+      <!-- Dark mode toggle -->
+      <li>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark / light mode">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">&#9728;</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9790;</span>
+        </button>
+      </li>
+    </ul>
+
+  </nav>
+</header>
