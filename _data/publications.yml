@@ -1,57 +1,117 @@
 # ============================================================
-# publications.yml
-#
-# Each entry supports:
-#   title     (string)  — full paper title
-#   authors   (string)  — comma-separated; wrap your name in <strong> or
-#                         mark it with "me: true" using the authors list form
-#   venue     (string)  — conference / journal name + year
-#   year      (int)     — used for grouping
-#   badge     (string)  — optional short label, e.g. "NeurIPS 2024"
-#   links:
-#     paper   (url)     — link to PDF / preprint
-#     code    (url)     — link to GitHub repo
-#     bibtex  (string)  — raw BibTeX entry (use YAML block scalar |)
-#
-# Add a new publication by copying a block below and filling in the fields.
+# publications.yml — ordered newest first
+# Bold **Onurcan Yılmaz** is processed by markdownify in the template.
 # ============================================================
 
-- title: "Your Paper Title Here: A Study of Something Interesting"
-  authors: "**Your Name**, Co-Author One, Co-Author Two"
-  venue: "Proceedings of the Conference on Important Things (COIT), 2024"
-  year: 2024
-  badge: "COIT 2024"
+# ── 2026 ─────────────────────────────────────────────────────
+
+- title: "Low-Latency Multi-Notch Filtering for Active Sensing in Weakly Electric Fish"
+  authors: "Mehmet Muratoğlu, **Onurcan Yılmaz**, Emin Yusuf Aydın, Hasan Doğan, İsmail Uyanık"
+  venue: "Journal, 2026"
+  year: 2026
+  badge: "In Press"
   links:
-    paper: "https://arxiv.org/abs/0000.00000"
-    code: "https://github.com/Urtii/your-repo"
+    paper: "https://openurl.ebsco.com/EPDB%3Agcd%3A12%3A25307628/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A191032080&crl=c&link_origin=scholar.google.com"
+
+# ── 2025 ─────────────────────────────────────────────────────
+
+- title: "Improving LiDAR Odometry with Hausdorff Distance-Based Variance Estimation"
+  authors: "**Onurcan Yılmaz**, İsmail Uyanık"
+  venue: "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE), pp. 2477–2482"
+  year: 2025
+  badge: "IEEE CASE 2025"
+  links:
+    paper: "https://doi.org/10.1109/CASE58245.2025.11163897"
     bibtex: |
-      @inproceedings{yourname2024paper,
-        title     = {Your Paper Title Here: A Study of Something Interesting},
-        author    = {Your Name and Co-Author One and Co-Author Two},
-        booktitle = {Proceedings of the Conference on Important Things},
-        year      = {2024},
-        url       = {https://arxiv.org/abs/0000.00000}
+      @INPROCEEDINGS{11163897,
+        author    = {Yilmaz, Onurcan and Uyanik, Ismail},
+        booktitle = {2025 IEEE 21st International Conference on Automation
+                     Science and Engineering (CASE)},
+        title     = {Improving LiDAR Odometry with Hausdorff Distance-Based
+                     Variance Estimation},
+        year      = {2025},
+        pages     = {2477--2482},
+        doi       = {10.1109/CASE58245.2025.11163897}
       }
 
-- title: "Another Publication: Methods and Results"
-  authors: "Co-Author One, **Your Name**, Co-Author Three"
-  venue: "Journal of Significant Results, Vol. 42, 2023"
-  year: 2023
+- title: "Sistem Tanılama Yöntemlerinin Zayıf Elektrik Balıklarının Hareket Dinamikleri Üzerinden Karşılaştırılması"
+  authors: "**Onurcan Yılmaz**, Eren Cem Göksülük, İsmail Uyanık"
+  venue: "Gazi Üniversitesi Mühendislik Mimarlık Fakültesi Dergisi, vol. 40, no. 2, pp. 877–888, 2025"
+  year: 2025
   badge: "Journal"
   links:
-    paper: "https://arxiv.org/abs/0000.00001"
+    paper: "https://izlik.org/JA56NC87CK"
     bibtex: |
-      @article{yourname2023another,
-        title   = {Another Publication: Methods and Results},
-        author  = {Co-Author One and Your Name and Co-Author Three},
-        journal = {Journal of Significant Results},
-        volume  = {42},
-        year    = {2023}
+      @article{yilmaz2025sistem,
+        title   = {Sistem tanılama yöntemlerinin zayıf elektrik balıklarının
+                   hareket dinamikleri üzerinden karşılaştırılması},
+        author  = {Yılmaz, Onurcan and Göksülük, Eren Cem and Uyanık, İsmail},
+        journal = {Gazi Üniversitesi Mühendislik Mimarlık Fakültesi Dergisi},
+        volume  = {40},
+        number  = {2},
+        pages   = {877--888},
+        year    = {2025},
+        doi     = {10.17341/gazimmfd.1384350},
+        url     = {https://izlik.org/JA56NC87CK}
       }
 
-- title: "Workshop Paper: Preliminary Findings on a New Topic"
-  authors: "**Your Name**, Advisor Name"
-  venue: "Workshop on Emerging Topics (WET) @ ICLR, 2023"
-  year: 2023
+- title: "Sensor Fusion and Mapping on a 4-Legged Robot System with 3D LiDAR"
+  authors: "**Onurcan Yılmaz**"
+  venue: "M.S. Thesis, Hacettepe University, Ankara, Turkey, February 2025"
+  year: 2025
+  badge: "M.S. Thesis"
   links:
-    paper: "https://arxiv.org/abs/0000.00002"
+    paper: "https://openaccess.hacettepe.edu.tr/items/1352f0b0-0a51-48b2-a02d-b2bcdb21efa4"
+    bibtex: |
+      @mastersthesis{yilmaz2025thesis,
+        author  = {Yılmaz, Onurcan},
+        title   = {4 Bacaklı Robot Sistemi Üzerinde 3D {LiDAR} ile Sensör
+                   Füzyonu ve Haritalama},
+        school  = {Hacettepe Üniversitesi},
+        address = {Ankara, Türkiye},
+        year    = {2025},
+        month   = {February},
+        note    = {English title: Sensor Fusion and Mapping on a 4-Legged
+                   Robot System with 3D LiDAR},
+        url     = {https://openaccess.hacettepe.edu.tr/items/1352f0b0-0a51-48b2-a02d-b2bcdb21efa4}
+      }
+
+# ── 2024 ─────────────────────────────────────────────────────
+
+- title: "Comparative System Identification of the Refuge Tracking Behavior in Weakly Electric Fish"
+  authors: "Eren Cem Göksülük, **Onurcan Yılmaz**, İsmail Uyanık"
+  venue: "10th IFAC Conference on Foundations of Systems Biology in Engineering (FOSBE), Corfu, Greece, 2024"
+  year: 2024
+  badge: "FOSBE 2024"
+  links:
+    paper: "https://fosbe2024.iceht.forth.gr/papers/0024.pdf"
+    bibtex: |
+      @inproceedings{goksuluk2024comparative,
+        author    = {Göksülük, Eren Cem and Yılmaz, Onurcan and Uyanık, İsmail},
+        title     = {Comparative System Identification of the Refuge Tracking
+                     Behavior in Weakly Electric Fish},
+        booktitle = {10th IFAC Conference on Foundations of Systems Biology
+                     in Engineering (FOSBE)},
+        year      = {2024},
+        address   = {Corfu, Greece},
+        url       = {https://fosbe2024.iceht.forth.gr/papers/0024.pdf}
+      }
+
+- title: "Closed-Loop Manipulation of Active Sensing Movements of Weakly Electric Fish During Refuge Tracking"
+  authors: "Emin Yusuf Aydın, **Onurcan Yılmaz**, Selçuk Topçakar, İsmail Uyanık"
+  venue: "Integrative and Comparative Biology, vol. 64, p. 1, January 2024"
+  year: 2024
+  badge: "Journal"
+  links:
+    bibtex: |
+      @article{aydin2024closedloop,
+        author  = {Aydın, Emin Yusuf and Yılmaz, Onurcan and Topçakar, Selçuk
+                   and Uyanık, İsmail},
+        title   = {Closed-Loop Manipulation of Active Sensing Movements of
+                   Weakly Electric Fish During Refuge Tracking},
+        journal = {Integrative and Comparative Biology},
+        volume  = {64},
+        pages   = {1},
+        year    = {2024},
+        month   = {January}
+      }
