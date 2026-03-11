@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where bundle)",
+      "Bash(where jekyll)",
+      "Bash(where ruby)",
+      "Bash(where gem)",
+      "Bash(ruby --version)",
+      "Bash(gem --version)",
+      "Bash(bundle --version)",
+      "Bash(jekyll --version)"
+    ]
+  }
+}
