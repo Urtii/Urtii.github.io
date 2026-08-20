@@ -16,15 +16,16 @@ urtii.github.io/
 ├── .claude/                 # Local Claude Code launch config (optional, dev-only)
 │
 ├── _data/
-│   ├── publications.yml     # ← Add papers here
-│   └── talks.yml            # ← Add talks / presentations / posters here
+│   ├── publications.yml     # ← Add papers, abstracts, posters, thesis here
+│   └── awards.yml           # ← Add awards, scholarships, grants here
 │
 ├── _includes/
 │   ├── head.html            # <head> meta, fonts, CSS
 │   ├── nav.html              # Fixed top navigation bar
 │   ├── footer.html           # Footer with social icons
 │   ├── social_icons.html     # Social link row (used on Home)
-│   └── teaching.html         # Teaching content (used on the Teaching page)
+│   ├── teaching.html         # Teaching content (used on the Teaching page)
+│   └── awards.html           # Awards content (used on the Awards page)
 │
 ├── _layouts/
 │   ├── default.html         # Base template (nav + footer)
@@ -45,11 +46,11 @@ urtii.github.io/
 │   │   └── profile.jpg      # Profile photo
 │   └── pdf/
 │       ├── cv.pdf                # CV, linked from the "View CV" nav button
-│       └── trc2026-poster.pdf    # Poster PDF linked from a Talks entry
+│       └── trc2026-poster.pdf    # Poster PDF linked from a publications entry
 │
 ├── index.md                 # Home page (bio text)
-├── publications.md          # Publications page
-├── talks.md                 # Talks & Presentations page
+├── publications.md          # Publications page (papers, abstracts, posters, thesis)
+├── awards.md                 # Awards page (dedicated, in nav)
 ├── teaching.md               # Teaching page (dedicated, in nav)
 ├── blog.md                  # Blog index (not in nav yet)
 └── 404.html                 # Custom 404 page
@@ -111,57 +112,65 @@ photo and CV — replace them in place whenever they need updating.
 
 ## Adding a Publication
 
-Open `_data/publications.yml` and append a new block, newest entries at the
-top of their year group:
+Everything — journal articles, conference papers, abstracts, posters, and
+the thesis — lives in one file: `_data/publications.yml`. Append a new
+block, newest entries at the top of their year group:
 
 ```yaml
 - title: "Your Paper Title"
   authors: "**Onurcan Yılmaz**, Co-Author One, Co-Author Two"
   venue: "Proceedings of Conference Name (CONF), 2025"
   year: 2025
-  badge: "CONF 2025"          # optional short label, e.g. an award
+  type: conference             # journal | conference | abstract | poster | thesis
+  author_position: 1           # 1-indexed position of Onurcan Yılmaz in `authors`
+  badge: "CONF 2025"           # optional short label, e.g. an award
   links:
-    paper: "https://doi.org/xx.xxxx/xxxxx"
-    code:  "https://github.com/you/repo"
-    bibtex: |
-      @inproceedings{yourname2025,
-        title     = {Your Paper Title},
-        author    = {Onurcan Yilmaz and Co-Author One and Co-Author Two},
-        booktitle = {Proceedings of Conference Name},
-        year      = {2025}
-      }
+    paper:  "https://doi.org/xx.xxxx/xxxxx"
+    code:   "https://github.com/you/repo"
+    poster: "/assets/pdf/your-poster.pdf"   # optional, e.g. a local PDF
+    slides: "https://link-to-slides.com"    # optional
 ```
 
 **Rules:**
 - Wrap **Onurcan Yılmaz** in `**double asterisks**` to bold it in the authors line.
-- The `year` integer controls the grouping header on the page.
-- `badge`, `links.paper`, `links.code`, and `links.bibtex` are all optional —
-  omit any field you don't need and its corresponding button will not appear.
+- The `year` integer controls the grouping header on the page (newest first).
+- `type` drives the filter checkboxes on `/publications/` (Journal Articles /
+  Conference Papers checked by default, Abstracts / Posters unchecked). Use
+  `thesis` for entries that should always render regardless of which
+  checkboxes are ticked — there's no checkbox for it, by design, since
+  there's only one.
+- Within each year, entries are grouped by `type` in a fixed priority order —
+  thesis > journal > conference > abstract > poster — and within each group,
+  sorted by `author_position` ascending (first-author work leads). This
+  ordering is handled entirely in `publications.md`'s Liquid template; you
+  only need to set `type` and `author_position` correctly on each entry.
+- `badge`, and every key under `links` (`paper`, `code`, `poster`, `slides`)
+  are optional — omit any field you don't need and its corresponding button
+  will not appear. `poster`/`slides` work for any `type`, not just
+  `type: poster` — e.g. a conference paper can still link the slide deck you
+  presented it with.
 - `badge` doubles as a place to note an award, e.g. `"🏆 2nd Place · SIU 2026"`.
+- No `bibtex` field — link the DOI/paper page instead of hand-maintaining a
+  BibTeX block that could drift out of sync or contain errors.
 
 ---
 
-## Adding a Talk or Poster
+## Adding an Award
 
-Open `_data/talks.yml` and append:
+Awards, scholarships, and grants live in `_data/awards.yml` and render on
+`/awards/`, newest first:
 
 ```yaml
-- date: "Jun 2025"
-  title: "Your Talk Title"
-  venue: "Conference or Institution Name — note an award here too, if any"
-  slides: "https://link-to-slides.com"   # omit to hide button
-  video:  "https://youtube.com/..."      # omit to hide button
+- date: "2025"
+  title: "Your Award or Scholarship Name"
+  category: "Award"            # Award | Scholarship | Grant — shown as a small badge
+  org: "Awarding Organization"
+  link: "https://example.com/announcement"   # optional
+  detail: "Extra context, e.g. a funded position that came with it."  # optional
 ```
 
-Both `slides` and `video` are **optional**. The Liquid template uses
-`{% if talk.slides and talk.slides != "" %}` — so any field you leave out
-(or comment out) will simply not render a button.
-
-The `slides` field also works for a local PDF poster: drop the file in
-`assets/pdf/` and point `slides` at it, e.g.
-`slides: "/assets/pdf/your-poster.pdf"` — the "Slides" button opens it
-directly, since the template only distinguishes Slides vs. Video, not
-poster vs. deck.
+`link` and `detail` are optional — omit either and that button/line simply
+won't render.
 
 ---
 
@@ -190,8 +199,8 @@ nav_links:
     url: "/"
   - title: "Publications"
     url: "/publications/"
-  - title: "Talks"
-    url: "/talks/"
+  - title: "Awards"
+    url: "/awards/"
   - title: "Teaching"
     url: "/teaching/"
   - title: "Blog"          # add this
@@ -212,6 +221,24 @@ The site ships with full dark/light mode support:
 
 All colours are controlled by CSS custom properties in `assets/css/style.css`
 under the `:root` and `[data-theme="dark"]` blocks — easy to customise.
+
+---
+
+## Typography
+
+Two Google Fonts, loaded in `_includes/head.html`:
+
+- **Inter** (`--font-ui`) — nav, headings, buttons, labels, badges.
+- **Lora** (`--font-body`) — body copy: bio paragraphs, publication/award
+  titles. Chosen over a display serif (the original was Playfair Display)
+  because display faces have thin hairline strokes that read fine but tire
+  the eye over paragraph-length text; Lora is a text serif designed for
+  exactly that.
+
+Both `assets/css/style.css` and `assets/js/main.js` are loaded with a
+`?v={{ site.time | date: '%s' }}` cache-busting query string, so every
+rebuild forces browsers to fetch the current version instead of serving a
+stale cached copy.
 
 ---
 
