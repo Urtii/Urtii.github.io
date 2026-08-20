@@ -1,6 +1,23 @@
 # ============================================================
 # publications.yml — ordered newest first
 # Bold **Onurcan Yılmaz** is processed by markdownify in the template.
+#
+# type: journal | conference | abstract | poster | thesis
+#   Drives the filter checkboxes on /publications/. "thesis" entries
+#   are not filterable — they always render regardless of checkbox state.
+#   Within each year, entries are grouped by type in a fixed priority
+#   order: thesis > journal > conference > abstract > poster.
+#
+# author_position: 1-indexed position of Onurcan Yılmaz in `authors`.
+#   Within the same type (and year), lower author_position sorts first.
+#
+# links: paper | code | slides | poster
+#   All optional — omit any key and its button simply won't render.
+#   No `bibtex` field — cite from the DOI/paper link instead of a
+#   hand-generated (and possibly wrong) BibTeX block.
+#   `slides` / `poster` point to an uploaded deck or poster PDF and are
+#   independent of `type` — e.g. a conference paper can carry a `poster`
+#   link too if one was presented alongside it.
 # ============================================================
 
 # ── 2026 ─────────────────────────────────────────────────────
@@ -9,6 +26,8 @@
   authors: "Mehmet Muratoğlu, **Onurcan Yılmaz**, Emin Yusuf Aydın, Hasan Doğan, İsmail Uyanık"
   venue: "1st International Neuronal Energy Dynamics Congress"
   year: 2026
+  type: abstract
+  author_position: 2
   badge: "Poster"
   links:
     paper: "https://openurl.ebsco.com/EPDB%3Agcd%3A12%3A25307628/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A191032080&crl=c&link_origin=scholar.google.com"
@@ -17,40 +36,31 @@
   authors: "**Onurcan Yılmaz**, İsmail Uyanık"
   venue: "2026 34th Signal Processing and Communications Applications Conference (SIU), İstanbul, Türkiye"
   year: 2026
+  type: conference
+  author_position: 1
   badge: "🏆 2nd Place · SIU 2026"
   links:
     paper: "https://doi.org/10.1109/SIU71813.2026.11637048"
-    bibtex: |
-      @INPROCEEDINGS{11637048,
-        author    = {Yilmaz, Onurcan and Uyanik, Ismail},
-        booktitle = {2026 34th Signal Processing and Communications
-                     Applications Conference (SIU)},
-        title     = {Floquet-Based Periodic Matrix Reconstruction in
-                     Discrete-Time LTP Systems},
-        year      = {2026},
-        address   = {İstanbul, Türkiye},
-        doi       = {10.1109/SIU71813.2026.11637048}
-      }
 
 - title: "Structure-Aware Filtering for Real-Time Separation of Active-Sensing and Tracking Motions"
   authors: "Emin Yusuf Aydın, **Onurcan Yılmaz**, İsmail Uyanık, Mustafa Öztürk"
   venue: "2026 34th Signal Processing and Communications Applications Conference (SIU), İstanbul, Türkiye"
   year: 2026
+  type: conference
+  author_position: 2
   badge: "SIU 2026"
   links:
     paper: "https://doi.org/10.1109/SIU71813.2026.11636672"
-    bibtex: |
-      @INPROCEEDINGS{11636672,
-        author    = {Aydin, Emin Yusuf and Yilmaz, Onurcan and Uyanik, Ismail
-                     and Ozturk, Mustafa},
-        booktitle = {2026 34th Signal Processing and Communications
-                     Applications Conference (SIU)},
-        title     = {Structure-Aware Filtering for Real-Time Separation of
-                     Active-Sensing and Tracking Motions},
-        year      = {2026},
-        address   = {İstanbul, Türkiye},
-        doi       = {10.1109/SIU71813.2026.11636672}
-      }
+
+- title: "A Unified Framework for Identifying Floquet-Equivalent Models of Linear Discrete-Time Periodic Systems"
+  authors: "**Onurcan Yılmaz**, İsmail Uyanık"
+  venue: "7th Turkish Robotics Conference, Koç University, İstanbul, Türkiye — Poster ID 116"
+  year: 2026
+  type: poster
+  author_position: 1
+  badge: "TRC 2026"
+  links:
+    poster: "/assets/pdf/trc2026-poster.pdf"
 
 # ── 2025 ─────────────────────────────────────────────────────
 
@@ -58,62 +68,31 @@
   authors: "**Onurcan Yılmaz**, İsmail Uyanık"
   venue: "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE), pp. 2477–2482"
   year: 2025
+  type: conference
+  author_position: 1
   badge: "IEEE CASE 2025"
   links:
     paper: "https://doi.org/10.1109/CASE58245.2025.11163897"
-    bibtex: |
-      @INPROCEEDINGS{11163897,
-        author    = {Yilmaz, Onurcan and Uyanik, Ismail},
-        booktitle = {2025 IEEE 21st International Conference on Automation
-                     Science and Engineering (CASE)},
-        title     = {Improving LiDAR Odometry with Hausdorff Distance-Based
-                     Variance Estimation},
-        year      = {2025},
-        pages     = {2477--2482},
-        doi       = {10.1109/CASE58245.2025.11163897}
-      }
 
 - title: "Sistem Tanılama Yöntemlerinin Zayıf Elektrik Balıklarının Hareket Dinamikleri Üzerinden Karşılaştırılması"
   authors: "**Onurcan Yılmaz**, Eren Cem Göksülük, İsmail Uyanık"
   venue: "Gazi Üniversitesi Mühendislik Mimarlık Fakültesi Dergisi, vol. 40, no. 2, pp. 877–888, 2025"
   year: 2025
+  type: journal
+  author_position: 1
   badge: "Journal"
   links:
     paper: "https://izlik.org/JA56NC87CK"
-    bibtex: |
-      @article{yilmaz2025sistem,
-        title   = {Sistem tanılama yöntemlerinin zayıf elektrik balıklarının
-                   hareket dinamikleri üzerinden karşılaştırılması},
-        author  = {Yılmaz, Onurcan and Göksülük, Eren Cem and Uyanık, İsmail},
-        journal = {Gazi Üniversitesi Mühendislik Mimarlık Fakültesi Dergisi},
-        volume  = {40},
-        number  = {2},
-        pages   = {877--888},
-        year    = {2025},
-        doi     = {10.17341/gazimmfd.1384350},
-        url     = {https://izlik.org/JA56NC87CK}
-      }
 
 - title: "Sensor Fusion and Mapping on a 4-Legged Robot System with 3D LiDAR"
   authors: "**Onurcan Yılmaz**"
   venue: "M.S. Thesis, Hacettepe University, Ankara, Turkey, February 2025"
   year: 2025
+  type: thesis
+  author_position: 1
   badge: "M.S. Thesis"
   links:
     paper: "https://openaccess.hacettepe.edu.tr/items/1352f0b0-0a51-48b2-a02d-b2bcdb21efa4"
-    bibtex: |
-      @mastersthesis{yilmaz2025thesis,
-        author  = {Yılmaz, Onurcan},
-        title   = {4 Bacaklı Robot Sistemi Üzerinde 3D {LiDAR} ile Sensör
-                   Füzyonu ve Haritalama},
-        school  = {Hacettepe Üniversitesi},
-        address = {Ankara, Türkiye},
-        year    = {2025},
-        month   = {February},
-        note    = {English title: Sensor Fusion and Mapping on a 4-Legged
-                   Robot System with 3D LiDAR},
-        url     = {https://openaccess.hacettepe.edu.tr/items/1352f0b0-0a51-48b2-a02d-b2bcdb21efa4}
-      }
 
 # ── 2024 ─────────────────────────────────────────────────────
 
@@ -121,6 +100,8 @@
   authors: "Eren Cem Göksülük, **Onurcan Yılmaz**, İsmail Uyanık"
   venue: "10th IFAC Conference on Foundations of Systems Biology in Engineering (FOSBE), Corfu, Greece, 2024"
   year: 2024
+  type: abstract
+  author_position: 2
   badge: "FOSBE 2024"
   links:
     paper: "https://fosbe2024.iceht.forth.gr/papers/0024.pdf"
@@ -129,6 +110,8 @@
   authors: "Emin Yusuf Aydın, **Onurcan Yılmaz**, Selçuk Topçakar, İsmail Uyanık"
   venue: "SICB 2024 Annual Meeting"
   year: 2024
+  type: abstract
+  author_position: 2
   badge: "Poster"
   links:
     paper: "https://academic.oup.com/icb/article/64/Supplement_1/S1/7758371"

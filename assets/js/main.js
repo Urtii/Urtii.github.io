@@ -92,17 +92,37 @@
 
 
   /* ----------------------------------------------------------
-     3. BibTeX collapsible blocks
+     3. Publications type filter
      ---------------------------------------------------------- */
-  document.querySelectorAll('.bibtex-toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var block = btn.closest('.pub-item').querySelector('.bibtex-block');
-      if (!block) return;
-      var isOpen = block.classList.toggle('is-open');
-      btn.textContent = isOpen ? 'Hide BibTeX' : 'BibTeX';
-      btn.setAttribute('aria-expanded', String(isOpen));
+  var pubFilterBoxes = document.querySelectorAll('.pub-filter__checkbox');
+
+  if (pubFilterBoxes.length) {
+    var applyPubFilter = function () {
+      var checkedTypes = Array.prototype.filter.call(pubFilterBoxes, function (box) {
+        return box.checked;
+      }).map(function (box) {
+        return box.value;
+      });
+
+      document.querySelectorAll('.pub-item').forEach(function (item) {
+        var type = item.getAttribute('data-type');
+        // Thesis entries are not filterable — always shown.
+        var visible = type === 'thesis' || checkedTypes.indexOf(type) !== -1;
+        item.classList.toggle('is-hidden', !visible);
+      });
+
+      document.querySelectorAll('.pub-year-group').forEach(function (group) {
+        var hasVisible = group.querySelector('.pub-item:not(.is-hidden)');
+        group.classList.toggle('is-empty', !hasVisible);
+      });
+    };
+
+    pubFilterBoxes.forEach(function (box) {
+      box.addEventListener('change', applyPubFilter);
     });
-  });
+
+    applyPubFilter();
+  }
 
 
   /* ----------------------------------------------------------
