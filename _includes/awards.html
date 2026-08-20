@@ -1,0 +1,35 @@
+<!-- Awards Section — included on /awards/ (awards.md) -->
+{% if site.data.awards.size > 0 %}
+<section class="awards-section">
+  <div class="container">
+
+    <ul class="award-list" role="list">
+      {% for award in site.data.awards %}
+      <li class="award-item">
+        <div class="award-meta">
+          <span class="award-date">{{ award.date }}</span>
+          {% if award.category and award.category != "" %}
+          <span class="award-category">{{ award.category }}</span>
+          {% endif %}
+        </div>
+
+        <div class="award-body">
+          <p class="award-title">
+            {% if award.link and award.link != "" %}
+            <a href="{{ award.link }}" target="_blank" rel="noopener noreferrer">{{ award.title }}</a>
+            {% else %}
+            {{ award.title }}
+            {% endif %}
+          </p>
+          <p class="award-org">{{ award.org }}</p>
+          {% if award.detail and award.detail != "" %}
+          <p class="award-detail">{{ award.detail }}</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,31 @@
+# ============================================================
+# awards.yml — ordered newest first
+# Rendered on /awards/ via _includes/awards.html
+#
+# category: Award | Scholarship | Grant — short badge shown next to the date
+# link, detail: optional. detail is a small extra line under org, e.g. for
+#   noting a funded position that came with a grant.
+# ============================================================
+
+- date: "2026"
+  title: "🥈 2nd Place, Robotics, Control & Automation Track"
+  category: "Award"
+  org: "34th Signal Processing and Communications Applications Conference (SIU)"
+  link: "https://doi.org/10.1109/SIU71813.2026.11637048"
+
+- date: "2025"
+  title: "TÜBİTAK 2211-A National PhD Scholarship Programme"
+  category: "Scholarship"
+  org: "The Scientific and Technological Research Council of Turkey (TÜBİTAK)"
+
+- date: "2022"
+  title: "TÜBİTAK 2210-A National MSc Scholarship Programme"
+  category: "Scholarship"
+  org: "The Scientific and Technological Research Council of Turkey (TÜBİTAK)"
+
+- date: "2022"
+  title: "5G and Beyond Joint Postgraduate Support Program"
+  category: "Grant"
+  org: "Information and Communication Technologies Authority (BTK), in partnership with METU, Hacettepe University & Bilkent University"
+  detail: "Included a funded Research Engineer appointment — 5G VATS R&D Associate, Turkcell Technology, based at Hacettepe University (May 2022 – Dec 2023)."
+  link: "https://5gtrforum.org.tr/haberler/5g-ve-otesi-ortak-lisansustu-destekleme-programi-2021-2022-bahar-donemi-basvuru-duyurusu"

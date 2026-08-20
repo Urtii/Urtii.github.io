@@ -31,8 +31,8 @@ nav_links:
     url: "/"
   - title: "Publications"
     url: "/publications/"
-  - title: "Talks"
-    url: "/talks/"
+  - title: "Awards"
+    url: "/awards/"
   - title: "Teaching"
     url: "/teaching/"
 
