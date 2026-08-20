@@ -23,3 +23,11 @@ node_modules/
 .idea/
 *.swp
 *.swo
+
+# LaTeX CV source and build artifacts (only cv.pdf is tracked)
+assets/pdf/cv.tex
+assets/pdf/resume.cls
+assets/pdf/*.aux
+assets/pdf/*.log
+assets/pdf/*.out
+assets/pdf/*.synctex.gz

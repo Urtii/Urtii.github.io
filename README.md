@@ -1,6 +1,7 @@
-# urtii.github.io — Academic Portfolio
+# urtii.github.io — Onurcan Yılmaz — Academic Portfolio
 
-A clean, minimal Jekyll-based academic portfolio hosted at
+The live Jekyll academic portfolio of **Onurcan Yılmaz**, PhD student and
+Research Assistant at Hacettepe University, hosted at
 [urtii.github.io](https://urtii.github.io).
 
 ---
@@ -10,25 +11,27 @@ A clean, minimal Jekyll-based academic portfolio hosted at
 ```
 urtii.github.io/
 ├── _config.yml              # Site-wide settings (name, URLs, nav links)
-├── Gemfile                  # Ruby dependencies (github-pages gem)
+├── Gemfile / Gemfile.lock   # Ruby dependencies (github-pages gem, pinned)
 ├── .gitignore
+├── .claude/                 # Local Claude Code launch config (optional, dev-only)
 │
 ├── _data/
 │   ├── publications.yml     # ← Add papers here
-│   └── talks.yml            # ← Add talks here
+│   └── talks.yml            # ← Add talks / presentations / posters here
 │
 ├── _includes/
 │   ├── head.html            # <head> meta, fonts, CSS
-│   ├── nav.html             # Fixed top navigation bar
-│   ├── footer.html          # Footer with social icons
-│   └── social_icons.html    # Social link row (used on Home)
+│   ├── nav.html              # Fixed top navigation bar
+│   ├── footer.html           # Footer with social icons
+│   ├── social_icons.html     # Social link row (used on Home)
+│   └── teaching.html         # Teaching content (used on the Teaching page)
 │
 ├── _layouts/
 │   ├── default.html         # Base template (nav + footer)
-│   ├── home.html            # Hero / bio layout
-│   ├── page.html            # Generic content page
-│   ├── post.html            # Individual blog post
-│   └── blog.html            # Blog index
+│   ├── home.html             # Hero / bio layout
+│   ├── page.html              # Generic content page (used by Teaching)
+│   ├── post.html              # Individual blog post
+│   └── blog.html              # Blog index
 │
 ├── _posts/
 │   └── 2024-01-01-welcome.md   # Sample post (blog not in nav yet)
@@ -39,13 +42,15 @@ urtii.github.io/
 │   ├── js/
 │   │   └── main.js          # Dark mode toggle + mobile nav
 │   ├── img/
-│   │   └── profile.jpg      # ← Replace with your photo
+│   │   └── profile.jpg      # Profile photo
 │   └── pdf/
-│       └── cv.pdf           # ← Drop your CV here
+│       ├── cv.pdf                # CV, linked from the "View CV" nav button
+│       └── trc2026-poster.pdf    # Poster PDF linked from a Talks entry
 │
 ├── index.md                 # Home page (bio text)
 ├── publications.md          # Publications page
-├── talks.md                 # Talks page
+├── talks.md                 # Talks & Presentations page
+├── teaching.md               # Teaching page (dedicated, in nav)
 ├── blog.md                  # Blog index (not in nav yet)
 └── 404.html                 # Custom 404 page
 ```
@@ -62,6 +67,9 @@ cd Urtii.github.io
 bundle install
 ```
 
+`Gemfile.lock` is committed and pinned to `bundler 4.0.7`, so `bundle install`
+reproduces the exact same gem versions GitHub Pages builds with.
+
 ### 2. Run locally
 
 ```bash
@@ -69,72 +77,78 @@ bundle exec jekyll serve --livereload
 # Open http://localhost:4000
 ```
 
-### 3. Personalise `_config.yml`
+A ready-made launch config for this is in `.claude/launch.json`
+("Jekyll Dev Server", port 4000) if you're running this inside Claude Code.
 
-Open `_config.yml` and fill in:
+### 3. Site identity
+
+`_config.yml` and `index.md` are already filled in with real information
+(name, tagline, social links, bio). To change any of it:
 
 ```yaml
-title: "Your Name"
-tagline: "PhD Candidate · Department of X · University of Y"
+title: "Onurcan Yılmaz"
+tagline: "Research Assistant · Electrical & Electronics Engineering · Hacettepe University"
 
 author:
-  name:            "Your Name"
-  email:           "you@university.edu"
+  name:            "Onurcan Yılmaz"
+  email:           "onurcan@hacettepe.edu.tr"
   avatar:          "/assets/img/profile.jpg"
-  github:          "your-github-username"
-  linkedin:        "your-linkedin-handle"
-  google_scholar:  "YOUR_SCHOLAR_ID"
-  orcid:           "0000-0000-0000-0000"
-  department_url:  "https://dept.university.edu/people/yourname"
+  github:          "Urtii"
+  linkedin:        "yilmaz-onurcan"
+  google_scholar:  "BcVj4hwAAAAJ"
+  orcid:           "0009-0003-6264-4290"
+  department_url:  "https://www.ee.hacettepe.edu.tr/?link=400999&sublink=285&lang=e"
 
 cv_url: "/assets/pdf/cv.pdf"
 ```
 
-### 4. Add your photo and CV
+### 4. Photo and CV
 
-- Replace `assets/img/profile.jpg` with your photo (square crop recommended).
-- Drop your CV PDF at `assets/pdf/cv.pdf`.
+`assets/img/profile.jpg` and `assets/pdf/cv.pdf` already contain the real
+photo and CV — replace them in place whenever they need updating.
 
 ---
 
 ## Adding a Publication
 
-Open `_data/publications.yml` and append a new block:
+Open `_data/publications.yml` and append a new block, newest entries at the
+top of their year group:
 
 ```yaml
 - title: "Your Paper Title"
-  authors: "**Your Name**, Co-Author One, Co-Author Two"
+  authors: "**Onurcan Yılmaz**, Co-Author One, Co-Author Two"
   venue: "Proceedings of Conference Name (CONF), 2025"
   year: 2025
-  badge: "CONF 2025"          # optional short label
+  badge: "CONF 2025"          # optional short label, e.g. an award
   links:
-    paper: "https://arxiv.org/abs/xxxx.xxxxx"
+    paper: "https://doi.org/xx.xxxx/xxxxx"
     code:  "https://github.com/you/repo"
     bibtex: |
       @inproceedings{yourname2025,
         title     = {Your Paper Title},
-        author    = {Your Name and Co-Author One and Co-Author Two},
+        author    = {Onurcan Yilmaz and Co-Author One and Co-Author Two},
         booktitle = {Proceedings of Conference Name},
         year      = {2025}
       }
 ```
 
 **Rules:**
-- Wrap **your name** in `**double asterisks**` to bold it in the authors line.
+- Wrap **Onurcan Yılmaz** in `**double asterisks**` to bold it in the authors line.
 - The `year` integer controls the grouping header on the page.
-- `badge`, `links.code`, and `links.bibtex` are all optional — omit any field
-  you don't need and its corresponding button will not appear.
+- `badge`, `links.paper`, `links.code`, and `links.bibtex` are all optional —
+  omit any field you don't need and its corresponding button will not appear.
+- `badge` doubles as a place to note an award, e.g. `"🏆 2nd Place · SIU 2026"`.
 
 ---
 
-## Adding a Talk
+## Adding a Talk or Poster
 
 Open `_data/talks.yml` and append:
 
 ```yaml
 - date: "Jun 2025"
   title: "Your Talk Title"
-  venue: "Conference or Institution Name"
+  venue: "Conference or Institution Name — note an award here too, if any"
   slides: "https://link-to-slides.com"   # omit to hide button
   video:  "https://youtube.com/..."      # omit to hide button
 ```
@@ -142,6 +156,23 @@ Open `_data/talks.yml` and append:
 Both `slides` and `video` are **optional**. The Liquid template uses
 `{% if talk.slides and talk.slides != "" %}` — so any field you leave out
 (or comment out) will simply not render a button.
+
+The `slides` field also works for a local PDF poster: drop the file in
+`assets/pdf/` and point `slides` at it, e.g.
+`slides: "/assets/pdf/your-poster.pdf"` — the "Slides" button opens it
+directly, since the template only distinguishes Slides vs. Video, not
+poster vs. deck.
+
+---
+
+## Editing Teaching
+
+The Teaching page lives at `/teaching/` (`teaching.md`, `layout: page`) and
+pulls its content from `_includes/teaching.html`. It has two blocks —
+**Laboratory Instruction** (course code, name, years) and **Senior Project
+Mentorship** (year, project title) — each a plain HTML list. Edit
+`_includes/teaching.html` directly to add or update entries; there's no
+data file for this section yet.
 
 ---
 
@@ -161,6 +192,8 @@ nav_links:
     url: "/publications/"
   - title: "Talks"
     url: "/talks/"
+  - title: "Teaching"
+    url: "/teaching/"
   - title: "Blog"          # add this
     url: "/blog/"
 ```
@@ -201,5 +234,5 @@ The site will be live at **https://urtii.github.io** within a minute or two.
 
 ## License
 
-Content © Your Name. Code/theme released under the
+Content © Onurcan Yılmaz. Code/theme released under the
 [MIT License](https://opensource.org/licenses/MIT) — feel free to fork and adapt.

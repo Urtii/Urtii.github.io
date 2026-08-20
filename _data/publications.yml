@@ -13,6 +13,45 @@
   links:
     paper: "https://openurl.ebsco.com/EPDB%3Agcd%3A12%3A25307628/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A191032080&crl=c&link_origin=scholar.google.com"
 
+- title: "Floquet-Based Periodic Matrix Reconstruction in Discrete-Time LTP Systems"
+  authors: "**Onurcan Yılmaz**, İsmail Uyanık"
+  venue: "2026 34th Signal Processing and Communications Applications Conference (SIU), İstanbul, Türkiye"
+  year: 2026
+  badge: "🏆 2nd Place · SIU 2026"
+  links:
+    paper: "https://doi.org/10.1109/SIU71813.2026.11637048"
+    bibtex: |
+      @INPROCEEDINGS{11637048,
+        author    = {Yilmaz, Onurcan and Uyanik, Ismail},
+        booktitle = {2026 34th Signal Processing and Communications
+                     Applications Conference (SIU)},
+        title     = {Floquet-Based Periodic Matrix Reconstruction in
+                     Discrete-Time LTP Systems},
+        year      = {2026},
+        address   = {İstanbul, Türkiye},
+        doi       = {10.1109/SIU71813.2026.11637048}
+      }
+
+- title: "Structure-Aware Filtering for Real-Time Separation of Active-Sensing and Tracking Motions"
+  authors: "Emin Yusuf Aydın, **Onurcan Yılmaz**, İsmail Uyanık, Mustafa Öztürk"
+  venue: "2026 34th Signal Processing and Communications Applications Conference (SIU), İstanbul, Türkiye"
+  year: 2026
+  badge: "SIU 2026"
+  links:
+    paper: "https://doi.org/10.1109/SIU71813.2026.11636672"
+    bibtex: |
+      @INPROCEEDINGS{11636672,
+        author    = {Aydin, Emin Yusuf and Yilmaz, Onurcan and Uyanik, Ismail
+                     and Ozturk, Mustafa},
+        booktitle = {2026 34th Signal Processing and Communications
+                     Applications Conference (SIU)},
+        title     = {Structure-Aware Filtering for Real-Time Separation of
+                     Active-Sensing and Tracking Motions},
+        year      = {2026},
+        address   = {İstanbul, Türkiye},
+        doi       = {10.1109/SIU71813.2026.11636672}
+      }
+
 # ── 2025 ─────────────────────────────────────────────────────
 
 - title: "Improving LiDAR Odometry with Hausdorff Distance-Based Variance Estimation"
